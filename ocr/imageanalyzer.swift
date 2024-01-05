@@ -5,7 +5,7 @@ import AppKit
 import CoreGraphics
 
 // Replace with the path to your image file
-let imagePath = "./image.png"
+let imagePath = "./input.png"
 
 // Load the image
 guard let image = NSImage(contentsOfFile: imagePath),
@@ -30,10 +30,10 @@ Task {
     do {
         let analysis = try await analyzer.analyze(cgImage, orientation: orientation, configuration: configuration)
         // Handle the analysis results
-        print("Analysis successful")
-
+        // print("Analysis successful")
         // Example: Print recognized text
         print(analysis.transcript)
+        exit(1)
         // if let recognizedText = analysis.text?.recognizedStrings {
         //     for text in recognizedText {
         //         print("Recognized text:", text)
